@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "d45da4a7-1318-4b4d-8fe4-749a61da572b",
+		"name": "AutoTesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST api/v1/users/register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "16d10e29-f3da-4177-b98a-0dd55ce83596",
+						"exec": [
+							"pm.test(\"Status is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// const response = pm.response.json();",
+							"",
+							"// pm.test(\"Response has userId\", function () {",
+							"//     pm.expect(response).to.have.property(\"userId\");",
+							"// });"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "d2cb284b-fcea-4006-9a7d-33e940935f3d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "test"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "{",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "login",
+							"value": "SlavaBuchnev",
+							"type": "text",
+							"uuid": "be64dca7-3fc0-4422-9a50-03369f395398"
+						},
+						{
+							"key": "email",
+							"value": "slavabuchnev5@gmail.com",
+							"type": "text",
+							"uuid": "9fcb0958-c9ca-446c-93c9-cddf64830d4d"
+						},
+						{
+							"key": "phone",
+							"value": "+7",
+							"type": "text",
+							"uuid": "032bfe8e-c2af-4e9f-80c1-74c80863116d"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text",
+							"uuid": "cf93d063-198b-4db2-9a75-fda274b7a4a3"
+						},
+						{
+							"key": "}",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:9090/api/v1/users/register"
+			},
+			"response": []
+		}
+	]
+}
