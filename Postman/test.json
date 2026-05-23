@@ -99,15 +99,11 @@
 					"script": {
 						"id": "16d10e29-f3da-4177-b98a-0dd55ce83596",
 						"exec": [
-							"pm.test(\"Status is 200\", function () {",
-							"    pm.response.to.have.status(200);",
+							"pm.test(\"Status is 401\", function () {",
+							"    pm.response.to.have.status(401);",
 							"});",
 							"",
-							"// const response = pm.response.json();",
-							"",
-							"// pm.test(\"Response has userId\", function () {",
-							"//     pm.expect(response).to.have.property(\"userId\");",
-							"// });"
+							"const response = pm.response.json();"
 						],
 						"type": "text/javascript",
 						"packages": {},
@@ -135,43 +131,8 @@
 					}
 				],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "{",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "login",
-							"value": "SlavaBuchnev",
-							"type": "text",
-							"uuid": "be64dca7-3fc0-4422-9a50-03369f395398"
-						},
-						{
-							"key": "email",
-							"value": "slavabuchnev5@gmail.com",
-							"type": "text",
-							"uuid": "9fcb0958-c9ca-446c-93c9-cddf64830d4d"
-						},
-						{
-							"key": "phone",
-							"value": "+7",
-							"type": "text",
-							"uuid": "032bfe8e-c2af-4e9f-80c1-74c80863116d"
-						},
-						{
-							"key": "password",
-							"value": "password",
-							"type": "text",
-							"uuid": "cf93d063-198b-4db2-9a75-fda274b7a4a3"
-						},
-						{
-							"key": "}",
-							"value": "",
-							"type": "text"
-						}
-					]
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"SlavaBuchnev\",\n    \"email\": \"slavabuchnev5@gmail.com\",\n    \"phone\": \"+79999999999\",\n    \"password\": \"SuperPassword0!\"\n}"
 				},
 				"url": "http://localhost:9090/api/v1/users/register"
 			},
